@@ -6,7 +6,7 @@ import {
   Image,
   View
 } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import Homepage from './page/Homepage';
 import Group from './page/Group';
 import Like from './page/Like';
@@ -74,5 +74,19 @@ const styles = StyleSheet.create({
     width:28,
   }
 });
+const Test = ({navigation})=>(
+    <Text>hahaha</Text>
+)
+cityo2oTabs.navigationOptions = () => ({
+    header: null,
+});
+const cityo2o = StackNavigator({
+    Root: {
+        screen: cityo2oTabs,
+    },
+    Test:{
+        screen:Test
+    }
+});
 
-AppRegistry.registerComponent('cityo2o', () => cityo2oTabs);
+AppRegistry.registerComponent('cityo2o', () => cityo2o);

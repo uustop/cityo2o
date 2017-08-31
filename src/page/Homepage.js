@@ -4,6 +4,7 @@ import {
     View,
     Text,
     Image,
+    Button,
     Dimensions,
 } from 'react-native'
 import Swiper from 'react-native-swiper'
@@ -39,6 +40,7 @@ const styles = {
 export default class Homepage extends Component {
     constructor (props) {
         super(props)
+        navigation=this.props.navigation;
         this.state = {
             imgList: [
                 'https://img1.360buyimg.com/da/jfs/t8377/156/202307/110069/1e8d4ee4/599e8949Na8c4b4ca.jpg',
@@ -73,6 +75,10 @@ export default class Homepage extends Component {
                 <View style={{height:96}}>
                     <Image style={styles.image} source={{url:this.state.adList[0]}} />
                 </View>
+                <Button
+                    onPress={() => navigation.navigate('Test')}
+                    title="Open profile screen"
+                />
             </View>
         );
     }
