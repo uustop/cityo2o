@@ -5,6 +5,9 @@ import {
     Text,
     Image,
     Button,
+    TouchableOpacity,
+    TouchableHighlight,
+    ScrollView,
     Dimensions,
 } from 'react-native'
 import Swiper from 'react-native-swiper'
@@ -37,6 +40,15 @@ const styles = {
     }
 }
 
+const haha = ()=>{
+    <TouchableOpacity
+        onPress={() => navigation.navigate('Web', { url: 'https://www.baidu.com' ,name:'秋季换新潮'})}>
+        <View style={{height:96}}>
+            <Image style={styles.image} source={{url:this.state.adList[0]}} />
+        </View>
+    </TouchableOpacity>
+}
+
 export default class Homepage extends Component {
     constructor (props) {
         super(props)
@@ -55,32 +67,47 @@ export default class Homepage extends Component {
     }
     render() {
         return (
-            <View style={{flex:1}}>
-                <View style={{height:168}}>
-                    <Swiper>
-                        <View style={styles.slide}>
-                            <Image style={styles.image} source={{url:this.state.imgList[0]}} />
+            <ScrollView>
+                <View style={{flex:1}}>
+                    <View style={{height:168}}>
+                        <Swiper paginationStyle={{bottom: 10}}>
+                            <TouchableOpacity activeOpacity={1}
+                                              onPress={() => navigation.navigate('Web', { url: 'https://www.jd.com' ,name:'京东'})}>
+                                <View style={{height:168}}>
+                                    <Image style={styles.image} source={{url:this.state.imgList[0]}} />
+                                </View></TouchableOpacity>
+                            <TouchableOpacity activeOpacity={1}
+                                              onPress={() => navigation.navigate('Web', { url: 'https://www.tmall.com' ,name:'天猫'})}>
+
+                                <View style={{height:168}}>
+                                    <Image style={styles.image} source={{url:this.state.imgList[1]}} />
+                                </View></TouchableOpacity>
+                            <TouchableOpacity activeOpacity={1}
+                                              onPress={() => navigation.navigate('Web', { url: 'https://www.vip.com' ,name:'唯品会'})}>
+
+                                <View style={{height:168}}>
+                                    <Image style={styles.image} source={{url:this.state.imgList[2]}} />
+                                </View></TouchableOpacity>
+                            <TouchableOpacity activeOpacity={1}
+                                              onPress={() => navigation.navigate('Web', { url: 'https://www.pinduoduo.com' ,name:'拼多多'})}>
+
+                                <View style={{height:168}}>
+                                    <Image style={styles.image} source={{url:this.state.imgList[3]}} />
+                                </View></TouchableOpacity>
+                        </Swiper>
+                    </View >
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Web', { url: 'https://www.baidu.com' ,name:'秋季换新潮'})}>
+                        <View style={{height:96}}>
+                            <Image style={styles.image} source={{url:this.state.adList[0]}} />
                         </View>
-                        <View style={styles.slide}>
-                            <Image style={styles.image} source={{url:this.state.imgList[1]}} />
-                        </View>
-                        <View style={styles.slide}>
-                            <Image style={styles.image} source={{url:this.state.imgList[2]}} />
-                        </View>
-                        <View style={styles.slide}>
-                            <Image style={styles.image} source={{url:this.state.imgList[3]}} />
-                        </View>
-                    </Swiper>
-                </View >
-                <View style={{height:96}}>
-                    <Image style={styles.image} source={{url:this.state.adList[0]}} />
+                    </TouchableOpacity>
+                    <Button
+                        onPress={() => navigation.navigate('Web', { url: 'https://www.baidu.com',name:'秋季换新潮' })}
+                        title="Open profile screen"
+                    />
                 </View>
-                <Button
-                    onPress={() => navigation.navigate('Test')}
-                    title="Open profile screen"
-                />
-            </View>
+            </ScrollView>
         );
     }
 }
-

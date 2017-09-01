@@ -14,3 +14,5 @@ adb reverse tcp:8081 tcp:8081
 添加资源图片
 
 swiper 仿京东
+
+swiper 样式问题不能跳转 已解决
