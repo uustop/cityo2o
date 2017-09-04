@@ -61,6 +61,7 @@ export default class Homepage extends Component {
                 'https://m.360buyimg.com/mobilecms/s720x322_jfs/t9424/48/50001665/86067/98db6c33/599f9b5fNc846be47.jpg!q70.jpg'
             ],
             adList:[
+                'https://m.360buyimg.com/mobilecms/jfs/t9154/69/384413561/61373/8889e7f6/59a6dab1Nccab65c8.jpg!q70.jpg',
                 'https://m.360buyimg.com/mobilecms/jfs/t9154/69/384413561/61373/8889e7f6/59a6dab1Nccab65c8.jpg!q70.jpg'
             ]
         }
@@ -74,32 +75,32 @@ export default class Homepage extends Component {
                             <TouchableOpacity activeOpacity={1}
                                               onPress={() => navigation.navigate('Web', { url: 'https://www.jd.com' ,name:'京东'})}>
                                 <View style={{height:168}}>
-                                    <Image style={styles.image} source={{url:this.state.imgList[0]}} />
+                                    <Image style={styles.image} source={{uri:this.state.imgList[0]}} />
                                 </View></TouchableOpacity>
                             <TouchableOpacity activeOpacity={1}
                                               onPress={() => navigation.navigate('Web', { url: 'https://www.tmall.com' ,name:'天猫'})}>
 
                                 <View style={{height:168}}>
-                                    <Image style={styles.image} source={{url:this.state.imgList[1]}} />
+                                    <Image style={styles.image} source={{uri:this.state.imgList[1]}} />
                                 </View></TouchableOpacity>
                             <TouchableOpacity activeOpacity={1}
                                               onPress={() => navigation.navigate('Web', { url: 'https://www.vip.com' ,name:'唯品会'})}>
 
                                 <View style={{height:168}}>
-                                    <Image style={styles.image} source={{url:this.state.imgList[2]}} />
+                                    <Image style={styles.image} source={{uri:this.state.imgList[2]}} />
                                 </View></TouchableOpacity>
                             <TouchableOpacity activeOpacity={1}
                                               onPress={() => navigation.navigate('Web', { url: 'https://www.pinduoduo.com' ,name:'拼多多'})}>
 
                                 <View style={{height:168}}>
-                                    <Image style={styles.image} source={{url:this.state.imgList[3]}} />
+                                    <Image style={styles.image} source={{uri:this.state.imgList[3]}} />
                                 </View></TouchableOpacity>
                         </Swiper>
                     </View >
-                    <TouchableOpacity
+                    <TouchableOpacity activeOpacity={1}
                         onPress={() => navigation.navigate('Web', { url: 'https://www.baidu.com' ,name:'秋季换新潮'})}>
                         <View style={{height:96}}>
-                            <Image style={styles.image} source={{url:this.state.adList[0]}} />
+                            <Image style={styles.image} source={{uri:this.state.adList[0]}} />
                         </View>
                     </TouchableOpacity>
                     <Button

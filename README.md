@@ -16,3 +16,5 @@ adb reverse tcp:8081 tcp:8081
 swiper 仿京东
 
 swiper 样式问题不能跳转 已解决
+
+android 用npm安装 不要用cnpm安装
